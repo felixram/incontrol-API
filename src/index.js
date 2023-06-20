@@ -20,6 +20,11 @@ const connectDB = require("../db/connect");
 app.use(express.json());
 
 //routes
+
+app.use("/", (req, res) => {
+  res.send("incontrol api");
+});
+
 app.use("/api/v1/auth", authRouter);
 
 app.use("/api/v1/bills", authUser, billsRouter);
